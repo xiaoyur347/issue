@@ -5,7 +5,9 @@ typedef void (*init_function_t)(void);
 
 int main()
 {
-#ifndef __mips__
+#ifdef __ANDROID__
+	const char *strLibName = "./libtest_android.so";
+#elif !defined(__mips__)
 	const char *strLibName = "./libtest_x86.so";
 #else
 	const char *strLibName = "./libtest_mips.so";
