@@ -14,6 +14,10 @@ g++-4.9 -shared -fPIC libtest.cpp -o libtest.so
 #PASS
 g++-4.9 -shared -fPIC libtest.cpp -o libtest.so -fsanitize=address
 #PASS
+g++-4.9 -shared -fPIC libtest.cpp -o libtest.so -fsanitize=address -lasan
+#PASS
 g++-4.9 -shared -fPIC libtest.cpp -o libtest.so -Wl,--no-undefined
 #FAIL
 g++-4.9 -shared -fPIC libtest.cpp -o libtest.so -fsanitize=address -Wl,--no-undefined
+#PASS
+g++-4.9 -shared -fPIC libtest.cpp -o libtest.so -fsanitize=address -lasan -Wl,--no-undefined
